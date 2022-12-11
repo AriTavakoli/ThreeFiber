@@ -5,6 +5,8 @@ import { TransformControls, Environment, OrbitControls } from "@react-three/drei
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Suspense } from "react";
 import { useGLTF } from '@react-three/drei'
+import { useRef } from 'react'
+import { Perf } from 'r3f-perf'
 
 
 
@@ -225,9 +227,11 @@ function MyLight() {
 
 function App() {
 
+  const lightRef = useRef()
 
 
   return (
+
     <Canvas style={{ height: '100vh', width: '100vw' }}
 
       camera={{
@@ -239,6 +243,7 @@ function App() {
 
 
     >
+      <Perf position="top-left" />
       <Suspense fallback={null}>
         <Model />
         <OrbitControls makeDefault />
@@ -246,7 +251,10 @@ function App() {
         <ambientLight intensity={0.10} />
 
         <TransformControls>
-          <pointLight position={[10, 10, 10]} />
+          <pointLight
+            position={[10, 10, 10]}
+            onMouseOver={e => console.log(e.object.position)}
+          />
         </TransformControls>
         <mesh position={[0, 0, 0]}>
 
