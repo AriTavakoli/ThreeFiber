@@ -1,0 +1,78 @@
+{
+  "sheetsById": {
+    "Demo Sheet": {
+      "staticOverrides": {
+        "byObject": {
+          "Light": {
+            "position": {
+              "x": -33.049495578919014,
+              "y": 50.690337351955534,
+              "z": -29.698305602057204
+            },
+            "intensity": 6.7899999999999885,
+            "rotation": {
+              "y": 2.8200000000000003,
+              "x": 1.7200000000000006,
+              "z": 4.68
+            },
+            "distance": 1.44
+          },
+          "Cube": {
+            "position": {
+              "x": -2.739326300424469
+            }
+          }
+        }
+      },
+      "sequence": {
+        "subUnitsPerUnit": 30,
+        "length": 10,
+        "type": "PositionalSequence",
+        "tracksByObject": {
+          "Cube": {
+            "trackData": {
+              "qr__ZWl_WJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cube:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "hbmEikvVS7",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": -6.279326300424466
+                  },
+                  {
+                    "id": "dJLkEoHLuC",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": -2.739326300424469
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "qr__ZWl_WJ"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitionVersion": "0.4.0",
+  "revisionHistory": [
+    "ynuz_OX7fL1urM-v",
+    "J_n1Fe4E3oAm7KBt"
+  ]
+}
