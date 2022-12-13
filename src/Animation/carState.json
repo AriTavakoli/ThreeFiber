@@ -1,0 +1,63 @@
+{
+  "sheetsById": {
+    "Practice Animation": {
+      "staticOverrides": {
+        "byObject": {
+          "car": {
+            "position": {
+              "y": 0.05
+            }
+          }
+        }
+      },
+      "sequence": {
+        "subUnitsPerUnit": 30,
+        "length": 10,
+        "type": "PositionalSequence",
+        "tracksByObject": {
+          "car": {
+            "trackData": {
+              "nfEUTGcgqK": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "car:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "aqkRWhmfL6",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.645,
+                      0.045
+                    ],
+                    "value": 0
+                  },
+                  {
+                    "id": "gjMXR0NZt2",
+                    "position": 1.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "value": 0.7400000000000004
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"y\"]": "nfEUTGcgqK"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitionVersion": "0.4.0",
+  "revisionHistory": [
+    "SbmmV5qBo5sVDpkx"
+  ]
+}

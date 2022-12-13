@@ -1,7 +1,13 @@
-export function Model(props) {
+
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { editable as e, SheetProvider } from "@theatre/r3f";
+
+
+export default function Model(props) {
   const { nodes, materials } = useGLTF("models/gltf/car.glb");
   return (
-    <group {...props} dispose={null}>
+    <e.group theatreKey='car'{...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
@@ -155,9 +161,8 @@ export function Model(props) {
           material={materials["Material.005"]}
         />
       </group>
-    </group>
+    </e.group>
   );
 }
-
 
 useGLTF.preload("models/gltf/car.glb");
