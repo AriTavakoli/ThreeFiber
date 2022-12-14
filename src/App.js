@@ -1,6 +1,5 @@
 import React from 'react';
-import { Canvas } from "@react-three/fiber";
-import { useLoader } from "@react-three/fiber";
+import { Canvas ,useLoader} from "@react-three/fiber";
 import { Stage, Environment, PerspectiveCamera, Sky, ContactShadows, RandomizedLight, AccumulativeShadows, softShadows, BakeShadows, useHelper, OrbitControls } from '@react-three/drei'
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Suspense } from "react";
@@ -13,14 +12,16 @@ import { editable as e, SheetProvider } from '@theatre/r3f'
 import { useFrame } from '@react-three/fiber'
 import state from '@src/Animation/state2.json'
 import carState from '@src/Animation/carState.json'
-import Model from '@src/components/Model.jsx'
+import Random from '@src/components/Random.jsx'
+// import Model from '@src/components/Model.jsx'
 import { useControls } from 'leva'
-import { useThree } from '@react-three/fiber'
+// import { useThree } from '@react-three/fiber'
 import { Bloom, Noise, Glitch, Vignette, EffectComposer } from '@react-three/postprocessing'
 
 import Particle from '@src/components/Particle.jsx'
 import ParticleV2 from '@src/components/ParticleV2.jsx'
-import ParticleV3 from '@src/components/ParticleV3.jsx'
+// import ParticleV3 from '@src/components/ParticleV3.jsx'
+// import JellyFish from '@src/components/JellyFish.jsx'
 
 import studio from '@theatre/studio'
 
@@ -48,10 +49,25 @@ function Box(props) {
 
   return (
     <e.mesh {...props} ref={boxRef} castShadow receiveShadow>
-      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <meshStandardMaterial attach="material" color="hotpink" />
+      <boxBufferGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="green" />
     </e.mesh>
 
+  )
+}
+
+
+const Sphere = (props) => {
+  const sphereRef = useRef()
+
+  return (
+    <mesh>
+      <points>
+        <sphereBufferGeometry attach="geometry" args={[1, 32, 32]} />
+        <pointsMaterial attach="material" size={0.1} sizeAttenuation color="blue" />
+
+      </points>
+    </mesh>
   )
 }
 
@@ -81,6 +97,7 @@ function App() {
   }, [])
 
 
+
   const EditableCamera = e(PerspectiveCamera, 'perspectiveCamera')
 
   //const myObject = practiceAnimation.object('car' , {foo: 'bar'})
@@ -107,8 +124,9 @@ function App() {
         /> */}
         {/* <Particle></Particle> */}
         {/* <ParticleV2></ParticleV2> */}
-        <ParticleV3></ParticleV3>
+        {/* <ParticleV3></ParticleV3> */}
         <OrbitControls />
+        <Sphere></Sphere>
         <EffectComposer multisampling={4}>
           {/* ... */}
           <Bloom
@@ -123,16 +141,18 @@ function App() {
 
             intensity={0.5}
 
-
-
-
-
-
           />
+
         </EffectComposer>
+
+
+
+
         <Perf position="bottom-left" />
 
         <SheetProvider sheet={demoSheet}>
+
+        <Random> </Random>
           <EditableCamera theatreKey="Camera" makeDefault position={[-3.6799999999999895, 4.739999999999986, 17.219999999999914]} fov={75} />
           {/* <PerspectiveCamera theatreKey="Camera" makeDefault position={[5, 5, -5]} fov={75} /> */}
 
@@ -140,9 +160,10 @@ function App() {
           <e.directionalLight theatreKey='light2' ref={lightRef} position={lightPosition} castShadow />
           {/* <PerspectiveCamera theatreKey="camera1" makeDefault position={cameraPosition} /> */}
 
-          <e.pointLight theatreKey="Light" position={[10, 10, 10]} />
+          <e.pointLight theatreKey="Light" position={[10, 10, 0]} />
 
 
+          {/* <JellyFish></JellyFish> */}
 
           {/* <Box theatreKey='box' onClick={() => {
             demoSheet.sequence.play({ iterationCount: Infinity, range: [0, 5] })
