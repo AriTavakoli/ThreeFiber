@@ -114,8 +114,7 @@ module.exports = {
                     test: /\.(ttf|eot|woff|woff2)$/,
                     exclude: /node_modules/,
                     type: 'asset/resource',
-                    generator:
-                    {
+                    generator: {
                         filename: 'assets/fonts/[hash][ext]'
                     }
                 },
@@ -125,8 +124,7 @@ module.exports = {
                     test: /\.(glsl|vs|fs|vert|frag)$/,
                     exclude: /node_modules/,
                     type: 'asset/source',
-                    generator:
-                    {
+                    generator: {
                         filename: 'assets/images/[hash][ext]'
                     }
                 }

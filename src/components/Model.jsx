@@ -6,7 +6,13 @@ import { editable as e, SheetProvider } from "@theatre/r3f";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("models/gltf/car.glb");
+
+
+
+  console.log(nodes , 'nodes')
+  console.log(materials , 'materials')
   return (
+
     <e.group theatreKey='car'{...props} dispose={null}>
       <mesh
         castShadow
