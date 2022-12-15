@@ -17,8 +17,6 @@ export default function ParticleV2() {
         child.material.emissive.set('red');
         child.material.color = 'red';
 
-
-
         const material = new THREE.PointsMaterial({
           color: 0xFFFFFF,
           size: 0.05,
@@ -26,9 +24,6 @@ export default function ParticleV2() {
 
 
         });
-
-
-
 
         const point = new THREE.Points(geometry, material);
 
@@ -40,7 +35,7 @@ export default function ParticleV2() {
 
     })
   }
-  
+
 
 
 

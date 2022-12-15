@@ -13,13 +13,14 @@ import { useFrame } from '@react-three/fiber'
 import state from '@src/Animation/state2.json'
 import carState from '@src/Animation/carState.json'
 import Random from '@src/components/Random.jsx'
+import Jfish from '@src/components/Jfish.jsx'
 // import Model from '@src/components/Model.jsx'
 import { useControls } from 'leva'
 // import { useThree } from '@react-three/fiber'
 import { Bloom, Noise, Glitch, Vignette, EffectComposer } from '@react-three/postprocessing'
 
-import Particle from '@src/components/Particle.jsx'
-import ParticleV2 from '@src/components/ParticleV2.jsx'
+// import Particle from '@src/components/Particle.jsx'
+// import ParticleV2 from '@src/components/ParticleV2.jsx'
 // import ParticleV3 from '@src/components/ParticleV3.jsx'
 // import JellyFish from '@src/components/JellyFish.jsx'
 
@@ -122,6 +123,7 @@ function App() {
           inclination={0.49}
 
         /> */}
+        <Jfish></Jfish>
         {/* <Particle></Particle> */}
         {/* <ParticleV2></ParticleV2> */}
         {/* <ParticleV3></ParticleV3> */}
@@ -173,6 +175,10 @@ function App() {
             <planeBufferGeometry args={[20, 20, 20]} color='black' />
             <meshStandardMaterial color='black' />
           </mesh> */}
+
+          {/* <Jfish></Jfish> */}
+
+
 
 
           {/* <e.Model theatreKey="Car" position={[0, 0, 0]} /> */}
